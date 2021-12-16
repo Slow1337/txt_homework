@@ -32,15 +32,13 @@ def get_shop_list_by_dishes(dishes, person_count):
     return temporary_dict
 
 
-def text_fetch(txt_file):
-    with open(txt_file, 'r', encoding='utf-8') as file:
-        trimmed_lines = []
-        for line in file:
-            trimmed_lines.append(line.strip())
-    return trimmed_lines
-
-
 def sort_and_merge(*args, **kwargs):
+    def text_fetch(txt_file):
+        with open(txt_file, 'r', encoding='utf-8') as file:
+            trimmed_lines = []
+            for line in file:
+                trimmed_lines.append(line.strip())
+        return trimmed_lines
     temp_list_args = list(args)
     temp_values_kwargs = list(kwargs.values())
     merged_list = temp_list_args + temp_values_kwargs
